@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-image: url('./assets/BACKGROUND.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-btn:hover {
+    background-color: #4752C4; /* 懸停時變深 */
+}
+
+/* 修正：註冊文字顏色 */
+.register-text {
+    color: #949BA4;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* 右側 QR Code 樣式修正 */
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+}
+
+.qr-container {
+    background: white; /* 修正：白底 */
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.real-qr {
+    width: 160px; /* 修正：QR Code 大小 */
+    height: 160px;
+}
+
+/* 修正：QR Code 下方的文字顏色 */
+.qr-section h3 { color: #F2F3F5; margin-bottom: 10px; }
+.qr-section p { color: #B5BAC1; font-size: 14px; text-align: center; line-height: 1.4; }
+
+/* 響應式：手機版隱藏 QR Code，將卡片寬度變窄 */
+@media (max-width: 600px) {
+    .login-card {
+        padding: 24px;
+        flex-direction: column;
+        align-items: center;
+        max-width: 440px;
+    }
+    .auth-form, .qr-section {
+        width: 100%;
+    }
+    .qr-section { display: none; }
+}
